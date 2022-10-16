@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainaCrceC.ui'
+## Form generated from reading UI file 'mainZoFdiv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.3
 ##
@@ -520,10 +520,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_37, 0, 0, 1, 1)
 
-        self.label_42 = QLabel(self.system_info_frame)
-        self.label_42.setObjectName(u"label_42")
+        self.system_platform = QLabel(self.system_info_frame)
+        self.system_platform.setObjectName(u"system_platform")
 
-        self.gridLayout_5.addWidget(self.label_42, 2, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.system_platform, 2, 1, 1, 1)
 
         self.label_46 = QLabel(self.system_info_frame)
         self.label_46.setObjectName(u"label_46")
@@ -531,10 +531,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_46, 3, 2, 1, 1)
 
-        self.label_43 = QLabel(self.system_info_frame)
-        self.label_43.setObjectName(u"label_43")
+        self.system_version = QLabel(self.system_info_frame)
+        self.system_version.setObjectName(u"system_version")
 
-        self.gridLayout_5.addWidget(self.label_43, 3, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.system_version, 3, 1, 1, 1)
 
         self.label_47 = QLabel(self.system_info_frame)
         self.label_47.setObjectName(u"label_47")
@@ -548,11 +548,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_41, 4, 0, 1, 1)
 
-        self.label_38 = QLabel(self.system_info_frame)
-        self.label_38.setObjectName(u"label_38")
-        self.label_38.setFont(font4)
+        self.system_system = QLabel(self.system_info_frame)
+        self.system_system.setObjectName(u"system_system")
+        self.system_system.setFont(font4)
 
-        self.gridLayout_5.addWidget(self.label_38, 1, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.system_system, 1, 0, 1, 1)
 
         self.label_40 = QLabel(self.system_info_frame)
         self.label_40.setObjectName(u"label_40")
@@ -560,10 +560,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_40, 3, 0, 1, 1)
 
-        self.label_44 = QLabel(self.system_info_frame)
-        self.label_44.setObjectName(u"label_44")
+        self.system_date = QLabel(self.system_info_frame)
+        self.system_date.setObjectName(u"system_date")
 
-        self.gridLayout_5.addWidget(self.label_44, 4, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.system_date, 4, 1, 1, 1)
 
         self.label_45 = QLabel(self.system_info_frame)
         self.label_45.setObjectName(u"label_45")
@@ -571,20 +571,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_45, 2, 2, 1, 1)
 
-        self.label_48 = QLabel(self.system_info_frame)
-        self.label_48.setObjectName(u"label_48")
+        self.system_processor = QLabel(self.system_info_frame)
+        self.system_processor.setObjectName(u"system_processor")
 
-        self.gridLayout_5.addWidget(self.label_48, 2, 3, 1, 1)
+        self.gridLayout_5.addWidget(self.system_processor, 2, 3, 1, 1)
 
-        self.label_49 = QLabel(self.system_info_frame)
-        self.label_49.setObjectName(u"label_49")
+        self.system_machine = QLabel(self.system_info_frame)
+        self.system_machine.setObjectName(u"system_machine")
 
-        self.gridLayout_5.addWidget(self.label_49, 3, 3, 1, 1)
+        self.gridLayout_5.addWidget(self.system_machine, 3, 3, 1, 1)
 
-        self.label_50 = QLabel(self.system_info_frame)
-        self.label_50.setObjectName(u"label_50")
+        self.system_time = QLabel(self.system_info_frame)
+        self.system_time.setObjectName(u"system_time")
 
-        self.gridLayout_5.addWidget(self.label_50, 4, 3, 1, 1)
+        self.gridLayout_5.addWidget(self.system_time, 4, 3, 1, 1)
 
 
         self.verticalLayout_5.addWidget(self.system_info_frame, 0, Qt.AlignTop)
@@ -629,11 +629,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit = QLineEdit(self.search_frame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"color: rgb(5, 115, 24);")
+        self.activity_search = QLineEdit(self.search_frame)
+        self.activity_search.setObjectName(u"activity_search")
+        self.activity_search.setStyleSheet(u"color: rgb(5, 115, 24);")
 
-        self.horizontalLayout_11.addWidget(self.lineEdit, 0, Qt.AlignRight|Qt.AlignTop)
+        self.horizontalLayout_11.addWidget(self.activity_search, 0, Qt.AlignRight|Qt.AlignTop)
 
         self.process_search_btn = QPushButton(self.search_frame)
         self.process_search_btn.setObjectName(u"process_search_btn")
@@ -656,28 +656,28 @@ class Ui_MainWindow(object):
         self.activities_center_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_14 = QHBoxLayout(self.activities_center_frame)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.actities_table_widget = QTableWidget(self.activities_center_frame)
-        if (self.actities_table_widget.columnCount() < 8):
-            self.actities_table_widget.setColumnCount(8)
+        self.activities_table_widget = QTableWidget(self.activities_center_frame)
+        if (self.activities_table_widget.columnCount() < 8):
+            self.activities_table_widget.setColumnCount(8)
         __qtablewidgetitem = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.activities_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.activities_table_widget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.activities_table_widget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.activities_table_widget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.activities_table_widget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        self.activities_table_widget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        self.activities_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        self.actities_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
-        self.actities_table_widget.setObjectName(u"actities_table_widget")
+        self.activities_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        self.activities_table_widget.setObjectName(u"activities_table_widget")
 
-        self.horizontalLayout_14.addWidget(self.actities_table_widget)
+        self.horizontalLayout_14.addWidget(self.activities_table_widget)
 
 
         self.verticalLayout_6.addWidget(self.activities_center_frame)
@@ -1024,7 +1024,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1079,36 +1079,36 @@ class Ui_MainWindow(object):
         self.label_29.setText(QCoreApplication.translate("MainWindow", u"Time Left", None))
         self.label_39.setText(QCoreApplication.translate("MainWindow", u"Platform", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"System Information", None))
-        self.label_42.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_platform.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_46.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
-        self.label_43.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_version.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_47.setText(QCoreApplication.translate("MainWindow", u"System Time", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"Version", None))
-        self.label_38.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"System Date", None))
-        self.label_44.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.label_41.setText(QCoreApplication.translate("MainWindow", u"System Date", None))
+        self.system_system.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.label_40.setText(QCoreApplication.translate("MainWindow", u"Version", None))
+        self.system_date.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_45.setText(QCoreApplication.translate("MainWindow", u"Processor", None))
-        self.label_48.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_49.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
-        self.label_50.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_processor.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_machine.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
+        self.system_time.setText(QCoreApplication.translate("MainWindow", u"N/A", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"Activities", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search Processes", None))
+        self.activity_search.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search Processes", None))
         self.process_search_btn.setText("")
-        ___qtablewidgetitem = self.actities_table_widget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.activities_table_widget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"PROCESS ID", None));
-        ___qtablewidgetitem1 = self.actities_table_widget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.activities_table_widget.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"PROCESSES ID", None));
-        ___qtablewidgetitem2 = self.actities_table_widget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.activities_table_widget.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"PROCESS STATUS", None));
-        ___qtablewidgetitem3 = self.actities_table_widget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3 = self.activities_table_widget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"SUSPEND", None));
-        ___qtablewidgetitem4 = self.actities_table_widget.horizontalHeaderItem(4)
+        ___qtablewidgetitem4 = self.activities_table_widget.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"STARTED", None));
-        ___qtablewidgetitem5 = self.actities_table_widget.horizontalHeaderItem(5)
+        ___qtablewidgetitem5 = self.activities_table_widget.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"SUSPEND", None));
-        ___qtablewidgetitem6 = self.actities_table_widget.horizontalHeaderItem(6)
+        ___qtablewidgetitem6 = self.activities_table_widget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"TERMINATE", None));
-        ___qtablewidgetitem7 = self.actities_table_widget.horizontalHeaderItem(7)
+        ___qtablewidgetitem7 = self.activities_table_widget.horizontalHeaderItem(7)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"KILL", None));
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"SUSPEND", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"RESUME", None))

@@ -1,12 +1,13 @@
 import sys
 import os
+import platform
+import datetime
 import psutil
 
 import PySide2extn
-from PySide2 import *
 from PySide2 import QtCore, QtWidgets
 from PySide2.QtCore import QPropertyAnimation
-from PySide2.QtWidgets import QMainWindow, QSizeGrip, QGraphicsDropShadowEffect, QPushButton
+from PySide2.QtWidgets import QMainWindow, QSizeGrip, QGraphicsDropShadowEffect, QPushButton, QTableWidgetItem
 from qt_material import *
 from multiprocessing import cpu_count
 # IMPORT GUI FILE
@@ -23,6 +24,8 @@ class MainWindow(QMainWindow):
         QSizeGrip(self.ui.size_grip)
         self.manage_button()
         self.cpu_ram()
+        self.system_info()
+        self.processes()
         # self.battery_information()
         # self.set_style()
         self.show()
@@ -80,10 +83,24 @@ class MainWindow(QMainWindow):
         self.sender().setStyleSheet("border-bottom: 2px solid")
         return
 
+    def system_info(self):
+        time = datetime.datetime.now().strftime("%I:%M:%S %p")
+        self.ui.system_date.setText(str(time))
+        date = datetime.datetime.now().strftime("%Y-%m-%d")
+        self.ui.system_time.setText(str(date))
+
+        self.ui.system_machine.setText(platform.machine())
+        self.ui.system_version.setText(platform.version())
+        self.ui.system_platform.setText(platform.platform())
+        self.ui.system_system.setText(platform.system())
+        self.ui.system_processor.setText(platform.processor())
+
+
     def secs2hours(self, secs):
         mm, ss = divmod(secs, 60)
         hh, mm = divmod(mm, 60)
         return "%d:%02d:%02d (H:M:S)" %(hh, mm, ss)
+
     def battery_information(self):
         batt = psutil.sensors_battery()
 
@@ -176,6 +193,58 @@ class MainWindow(QMainWindow):
         self.ui.ram_percentage.spb_lineStyle(("SolidLine", "SolidLine", "SolidLine"))
         self.ui.ram_percentage.spb_lineCap(("RoundCap", "RoundCap", "RoundCap"))
         self.ui.ram_percentage.spb_setPathHidden(True)
+
+    def create_table_widget(self, rowPosition, columnPosition, text, tableName):
+        qtablewidgetitem = QTableWidgetItem()
+        getattr(self.ui, tableName).setItem(rowPosition, columnPosition, qtablewidgetitem)
+        qtablewidgetitem = getattr(self.ui, tableName).item(rowPosition, columnPosition)
+        qtablewidgetitem.setText(text)
+
+    def processes(self):
+        for x in psutil.pids():
+            rowPosition = self.ui.activities_table_widget.rowCount()
+            self.ui.activities_table_widget.insertRow(rowPosition)
+
+            try:
+                process = psutil.Process(x)
+
+                self.create_table_widget(rowPosition, 0, str(process.pid), "tableWidget")
+                self.create_table_widget(rowPosition, 1, process.name(), "tableWidget")
+                self.create_table_widget(rowPosition, 2, process.status(), "tableWidget")
+                self.creat_table_widget(rowPosition, 3, str(datetime.datetime.utcfromtimestamp(process.create_time()).strftime("%Y-%m-%d %H:%M:%S")), "tableWidget")
+
+                suspend_btn = QPushButton(self.ui.tableWidget)
+                suspend_btn.setText("Suspend")
+                suspend_btn.setStyleSheet("color: brown")
+                suspend_btn.setCellWidget(rowPosition, 4, suspend_btn)
+
+                resume_btn = QPushButton(self.ui.tableWidget)
+                resume_btn.setText("Resume")
+                resume_btn.setStyleSheet("color: green")
+                self.ui.tableWidget.setCellWidget(rowPosition, 5, resume_btn)
+
+                terminate_btn = QPushButton(self.ui.tableWidget)
+                terminate_btn.setText("Terminate")
+                terminate_btn.setStyleSheet("color: orange")
+                self.ui.tableWidget.setCellWidget(rowPosition, 6, terminate_btn)
+
+                kill_btn = QPushButton(self.ui.tableWidget)
+                kill_btn.setText("kill")
+                kill_btn.setStyleSheet("color: red")
+                self.ui.tableWidget.setCellWidget(rowPosition, 7, kill_btn)
+            except Exception as e:
+                print(e)
+
+        self.ui.activity_search.textChanged.connect(self.findName)
+
+    def findName(self):
+        name = self.ui.activity_search.text().lower()
+        for row in range(self.ui.tableWidget.rowCount()):
+            item = self.ui.tableWidget.item(row, 1)
+            self.ui.tableWidget.setRowHidden(row, name not in item.text().lower())
+
+
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
