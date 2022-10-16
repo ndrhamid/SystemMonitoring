@@ -1,0 +1,18 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>./window-minimize-solid.png</file>
+        <file>./xmark-solid.png</file>
+        <file>./window-restore-solid.png</file>
+        <file>./systemTask.png</file>
+        <file>./monitor.png</file>
+        <file>./menu.png</file>
+        <file>./Cpu.png</file>
+        <file>./battery.png</file>
+        <file>./storage.png</file>
+        <file>./sensor.png</file>
+        <file>./network.png</file>
+        <file>./systemInformation.png</file>
+        <file>./search.png</file>
+    </qresource>
+</RCC>

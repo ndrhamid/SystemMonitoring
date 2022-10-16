@@ -1,0 +1,7 @@
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+psutil @ file:///home/ndr/PycharmProjects/SystemMonitoring/psutil-5.9.2-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+PySide2 @ file:///home/ndr/PycharmProjects/SystemMonitoring/packages/PySide2-5.15.2.1-5.15.2-cp35.cp36.cp37.cp38.cp39.cp310-abi3-manylinux1_x86_64.whl
+PySide2extn @ file:///home/ndr/PycharmProjects/SystemMonitoring/packages/PySide2extn-1.0.0-py3-none-any.whl
+qt-material==2.12
+shiboken2 @ file:///home/ndr/PycharmProjects/SystemMonitoring/packages/shiboken2-5.15.2.1-5.15.2-cp35.cp36.cp37.cp38.cp39.cp310-abi3-manylinux1_x86_64.whl
