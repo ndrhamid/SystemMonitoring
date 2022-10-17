@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainZoFdiv.ui'
+## Form generated from reading UI file 'mainBktZRb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.3
 ##
@@ -689,25 +689,25 @@ class Ui_MainWindow(object):
         self.activities_footer_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_13 = QHBoxLayout(self.activities_footer_frame)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.pushButton_3 = QPushButton(self.activities_footer_frame)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.suspend_btn = QPushButton(self.activities_footer_frame)
+        self.suspend_btn.setObjectName(u"suspend_btn")
 
-        self.horizontalLayout_13.addWidget(self.pushButton_3)
+        self.horizontalLayout_13.addWidget(self.suspend_btn)
 
-        self.pushButton_4 = QPushButton(self.activities_footer_frame)
-        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.resume_btn = QPushButton(self.activities_footer_frame)
+        self.resume_btn.setObjectName(u"resume_btn")
 
-        self.horizontalLayout_13.addWidget(self.pushButton_4)
+        self.horizontalLayout_13.addWidget(self.resume_btn)
 
-        self.pushButton_5 = QPushButton(self.activities_footer_frame)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.terminate_btn = QPushButton(self.activities_footer_frame)
+        self.terminate_btn.setObjectName(u"terminate_btn")
 
-        self.horizontalLayout_13.addWidget(self.pushButton_5)
+        self.horizontalLayout_13.addWidget(self.terminate_btn)
 
-        self.pushButton_6 = QPushButton(self.activities_footer_frame)
-        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.kill_btn = QPushButton(self.activities_footer_frame)
+        self.kill_btn.setObjectName(u"kill_btn")
 
-        self.horizontalLayout_13.addWidget(self.pushButton_6)
+        self.horizontalLayout_13.addWidget(self.kill_btn)
 
 
         self.verticalLayout_6.addWidget(self.activities_footer_frame)
@@ -1110,10 +1110,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"TERMINATE", None));
         ___qtablewidgetitem7 = self.activities_table_widget.horizontalHeaderItem(7)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"KILL", None));
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"SUSPEND", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"RESUME", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"TERMINATE", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"KILL", None))
+        self.suspend_btn.setText(QCoreApplication.translate("MainWindow", u"SUSPEND", None))
+        self.resume_btn.setText(QCoreApplication.translate("MainWindow", u"RESUME", None))
+        self.terminate_btn.setText(QCoreApplication.translate("MainWindow", u"TERMINATE", None))
+        self.kill_btn.setText(QCoreApplication.translate("MainWindow", u"KILL", None))
         self.label_52.setText(QCoreApplication.translate("MainWindow", u"Disk Partition", None))
         ___qtablewidgetitem8 = self.storage_table_widget.horizontalHeaderItem(0)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"DEVICE", None));
