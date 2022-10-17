@@ -1245,28 +1245,28 @@ border:none;
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_13">
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="suspend_btn">
                    <property name="text">
                     <string>SUSPEND</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_4">
+                  <widget class="QPushButton" name="resume_btn">
                    <property name="text">
                     <string>RESUME</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_5">
+                  <widget class="QPushButton" name="terminate_btn">
                    <property name="text">
                     <string>TERMINATE</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_6">
+                  <widget class="QPushButton" name="kill_btn">
                    <property name="text">
                     <string>KILL</string>
                    </property>
