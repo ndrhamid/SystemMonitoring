@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         self.system_info()
         self.processes()
         # self.battery_information()
-        # self.set_style()
+        self.set_style()
         self.show()
     def set_style(self):
         apply_stylesheet(app, theme="dark_cyan.xml")
@@ -199,7 +199,7 @@ class MainWindow(QMainWindow):
         getattr(self.ui, tableName).setItem(rowPosition, columnPosition, qtablewidgetitem)
         qtablewidgetitem = getattr(self.ui, tableName).item(rowPosition, columnPosition)
 
-        suspend_btn = QPushButton(self.ui.activities_table_widget)
+        qtablewidgetitem.setText(text)
     def processes(self):
         for x in psutil.pids():
             rowPosition = self.ui.activities_table_widget.rowCount()
@@ -231,8 +231,23 @@ class MainWindow(QMainWindow):
                 self.ui.terminate_btn.setStyleSheet("color: orange")
                 self.ui.activities_table_widget.setCellWidget(rowPosition, 6, terminate_btn)
 
+                kill_btn = QPushButton(self.ui.activities_table_widget)
+                kill_btn.setText("Kill")
+                kill_btn.setStyleSheet("color: red")
+                self.ui.kill_btn.setStyleSheet("color: red")
+                self.ui.activities_table_widget.setCellWidget(rowPosition, 7, kill_btn)
+
             except Exception as e:
                 print(e)
+
+        self.ui.activity_search.textChanged.connect(self.findName())
+
+    def findName(self):
+        name = self.ui.activity_search.text().lower()
+        for row in range(self.ui.activities_table_widget.rowCount()):
+            item = self.ui.activities_table_widget.item(row, 1)
+            self.ui.activities_table_widget.setRowHidden(row, name not in item.text().lower())
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
