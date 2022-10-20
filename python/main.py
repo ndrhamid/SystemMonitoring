@@ -3,16 +3,26 @@ import os
 import platform
 import datetime
 import psutil
+import shutil
 
 import PySide2extn
 from PySide2 import QtCore, QtWidgets
 from PySide2.QtCore import QPropertyAnimation
-from PySide2.QtWidgets import QMainWindow, QSizeGrip, QGraphicsDropShadowEffect, QPushButton, QTableWidgetItem
+from PySide2.QtWidgets import QMainWindow, QSizeGrip, QGraphicsDropShadowEffect, QPushButton, QTableWidgetItem, QProgressBar
 from qt_material import *
 from multiprocessing import cpu_count
 # IMPORT GUI FILE
 from ui import Ui_MainWindow
 
+
+# Global
+platforms = {
+    'linux': 'Linux',
+    'linux1': 'Linux',
+    'linux2': 'Linux',
+    'darwin': 'OS X',
+    'win32': 'Windows'
+}
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -26,6 +36,7 @@ class MainWindow(QMainWindow):
         self.cpu_ram()
         self.system_info()
         self.processes()
+        self.storage()
         # self.battery_information()
         self.set_style()
         self.show()
@@ -247,6 +258,42 @@ class MainWindow(QMainWindow):
         for row in range(self.ui.activities_table_widget.rowCount()):
             item = self.ui.activities_table_widget.item(row, 1)
             self.ui.activities_table_widget.setRowHidden(row, name not in item.text().lower())
+
+    def storage(self):
+        global platforms
+        storage_device = psutil.disk_partitions(all=False)
+        z = 0
+        for x in storage_device:
+            rowPosition = self.ui.storage_table_widget.rowCount()
+            self.ui.storage_table_widget.insertRow(rowPosition)
+            self.create_table_widget(rowPosition, 0, x.device, "storage_table_widget")
+            self.create_table_widget(rowPosition, 1, x.mountpoint, "storage_table_widget")
+            self.create_table_widget(rowPosition, 2, x.fstype, "storage_table_widget")
+            self.create_table_widget(rowPosition, 3, x.opts, "storage_table_widget")
+
+            if sys.platform == "linux" or sys.platform == "linux1" or sys.platform == "linux2":
+                self.create_table_widget(rowPosition, 4, str(x.maxfile), "storage_table_widget")
+                self.create_table_widget(rowPosition, 5, str(x.maxpath), "storage_table_widget")
+            else:
+                self.create_table_widget(rowPosition, 4, "Function not available on" + platforms[sys.platform], "storage_table_widget")
+                self.create_table_widget(rowPosition, 5, "Function not available on" + platforms[sys.platform], "storage_table_widget")
+
+            try:
+                disk_usage = shutil.disk_usage(x.mountpoint)
+                self.create_table_widget(rowPosition, 6, str((disk_usage.total / (1024 * 1024 * 1024)).__round__()) + " GB", "storage_table_widget")
+                self.create_table_widget(rowPosition, 7, str((disk_usage.free / (1024 * 1024 * 1024)).__round__()) + " GB", "storage_table_widget")
+                self.create_table_widget(rowPosition, 8, str((disk_usage.used / (1024 * 1024 * 1024)).__round__()) + " GB", "storage_table_widget")
+
+                # full_disk = (disk_usage.used / disk_usage.total) * 100
+                # progressBar = QProgressBar(self.ui.storage_table_widget)
+                # progressBar.setObjectName(u"progressBar")
+                # progressBar.setValue(full_disk)
+                # self.ui.storage_table_widget(rowPosition, 9, progressBar, "storage_table_widget")
+            except Exception as e:
+                print(e)
+
+
+                
 
 
 if __name__ == "__main__":

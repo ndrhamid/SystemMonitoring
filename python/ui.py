@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainBktZRb.ui'
+## Form generated from reading UI file 'mainTHNAjF.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.3
+## Created by: Qt User Interface Compiler version 5.14.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
+from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
+    QRect, QSize, QUrl, Qt)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
+    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+    QRadialGradient)
 from PySide2.QtWidgets import *
 
 from PySide2extn.RoundProgressBar import roundProgressBar
@@ -19,7 +22,7 @@ import icons_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
+        if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(944, 617)
         MainWindow.setStyleSheet(u"*{\n"
@@ -732,8 +735,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addWidget(self.label_52)
 
         self.storage_table_widget = QTableWidget(self.storage_frame)
-        if (self.storage_table_widget.columnCount() < 8):
-            self.storage_table_widget.setColumnCount(8)
+        if (self.storage_table_widget.columnCount() < 9):
+            self.storage_table_widget.setColumnCount(9)
         __qtablewidgetitem8 = QTableWidgetItem()
         self.storage_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
@@ -750,6 +753,8 @@ class Ui_MainWindow(object):
         self.storage_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
         self.storage_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.storage_table_widget.setHorizontalHeaderItem(8, __qtablewidgetitem16)
         self.storage_table_widget.setObjectName(u"storage_table_widget")
 
         self.verticalLayout_7.addWidget(self.storage_table_widget)
@@ -777,16 +782,16 @@ class Ui_MainWindow(object):
         self.sensor_table_Widget = QTableWidget(self.sensors_frame)
         if (self.sensor_table_Widget.columnCount() < 5):
             self.sensor_table_Widget.setColumnCount(5)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.sensor_table_Widget.setHorizontalHeaderItem(0, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
-        self.sensor_table_Widget.setHorizontalHeaderItem(1, __qtablewidgetitem17)
+        self.sensor_table_Widget.setHorizontalHeaderItem(0, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        self.sensor_table_Widget.setHorizontalHeaderItem(2, __qtablewidgetitem18)
+        self.sensor_table_Widget.setHorizontalHeaderItem(1, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        self.sensor_table_Widget.setHorizontalHeaderItem(3, __qtablewidgetitem19)
+        self.sensor_table_Widget.setHorizontalHeaderItem(2, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        self.sensor_table_Widget.setHorizontalHeaderItem(4, __qtablewidgetitem20)
+        self.sensor_table_Widget.setHorizontalHeaderItem(3, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.sensor_table_Widget.setHorizontalHeaderItem(4, __qtablewidgetitem21)
         self.sensor_table_Widget.setObjectName(u"sensor_table_Widget")
 
         self.verticalLayout_9.addWidget(self.sensor_table_Widget)
@@ -805,7 +810,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 205, 474))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 831, 482))
         self.verticalLayout_10 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -824,16 +829,16 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.stats_frame)
         if (self.tableWidget.columnCount() < 5):
             self.tableWidget.setColumnCount(5)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem21)
         __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem22)
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem22)
         __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem23)
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem24)
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem25)
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem25)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem26)
         self.tableWidget.setObjectName(u"tableWidget")
 
         self.verticalLayout_12.addWidget(self.tableWidget)
@@ -856,24 +861,24 @@ class Ui_MainWindow(object):
         self.network_io_counter_table_widget = QTableWidget(self.network_io_counter_frame)
         if (self.network_io_counter_table_widget.columnCount() < 9):
             self.network_io_counter_table_widget.setColumnCount(9)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem26)
         __qtablewidgetitem27 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(1, __qtablewidgetitem27)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem27)
         __qtablewidgetitem28 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(2, __qtablewidgetitem28)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(1, __qtablewidgetitem28)
         __qtablewidgetitem29 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(3, __qtablewidgetitem29)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(2, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(4, __qtablewidgetitem30)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(3, __qtablewidgetitem30)
         __qtablewidgetitem31 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(5, __qtablewidgetitem31)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(4, __qtablewidgetitem31)
         __qtablewidgetitem32 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem32)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(5, __qtablewidgetitem32)
         __qtablewidgetitem33 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem33)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem33)
         __qtablewidgetitem34 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(8, __qtablewidgetitem34)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem34)
+        __qtablewidgetitem35 = QTableWidgetItem()
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(8, __qtablewidgetitem35)
         self.network_io_counter_table_widget.setObjectName(u"network_io_counter_table_widget")
         self.network_io_counter_table_widget.setStyleSheet(u"")
 
@@ -897,18 +902,18 @@ class Ui_MainWindow(object):
         self.network_addresses_tablewidget = QTableWidget(self.network_addresses_frame)
         if (self.network_addresses_tablewidget.columnCount() < 6):
             self.network_addresses_tablewidget.setColumnCount(6)
-        __qtablewidgetitem35 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem35)
         __qtablewidgetitem36 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem36)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem36)
         __qtablewidgetitem37 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem37)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem37)
         __qtablewidgetitem38 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem38)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem38)
         __qtablewidgetitem39 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem39)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem39)
         __qtablewidgetitem40 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem40)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem40)
+        __qtablewidgetitem41 = QTableWidgetItem()
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem41)
         self.network_addresses_tablewidget.setObjectName(u"network_addresses_tablewidget")
 
         self.verticalLayout_14.addWidget(self.network_addresses_tablewidget)
@@ -931,18 +936,18 @@ class Ui_MainWindow(object):
         self.network_connection_frame_tablewidget = QTableWidget(self.network_connection_frame)
         if (self.network_connection_frame_tablewidget.columnCount() < 6):
             self.network_connection_frame_tablewidget.setColumnCount(6)
-        __qtablewidgetitem41 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem42)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem43)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem44)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem45)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem46)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem46)
+        __qtablewidgetitem47 = QTableWidgetItem()
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem47)
         self.network_connection_frame_tablewidget.setObjectName(u"network_connection_frame_tablewidget")
 
         self.verticalLayout_15.addWidget(self.network_connection_frame_tablewidget)
@@ -1024,7 +1029,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1131,69 +1136,71 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"TOTAL STORAGE", None));
         ___qtablewidgetitem15 = self.storage_table_widget.horizontalHeaderItem(7)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"FREE STORAGE", None));
+        ___qtablewidgetitem16 = self.storage_table_widget.horizontalHeaderItem(8)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"USED STORAGE", None));
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"Sensors", None))
-        ___qtablewidgetitem16 = self.sensor_table_Widget.horizontalHeaderItem(0)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem17 = self.sensor_table_Widget.horizontalHeaderItem(1)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"SENSOR", None));
-        ___qtablewidgetitem18 = self.sensor_table_Widget.horizontalHeaderItem(2)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"CURRENT", None));
-        ___qtablewidgetitem19 = self.sensor_table_Widget.horizontalHeaderItem(3)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"HIGH", None));
-        ___qtablewidgetitem20 = self.sensor_table_Widget.horizontalHeaderItem(4)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"CRITICAL", None));
+        ___qtablewidgetitem17 = self.sensor_table_Widget.horizontalHeaderItem(0)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem18 = self.sensor_table_Widget.horizontalHeaderItem(1)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"SENSOR", None));
+        ___qtablewidgetitem19 = self.sensor_table_Widget.horizontalHeaderItem(2)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"CURRENT", None));
+        ___qtablewidgetitem20 = self.sensor_table_Widget.horizontalHeaderItem(3)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"HIGH", None));
+        ___qtablewidgetitem21 = self.sensor_table_Widget.horizontalHeaderItem(4)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"CRITICAL", None));
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"Stats", None))
-        ___qtablewidgetitem21 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"ISUP", None));
-        ___qtablewidgetitem22 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"DUPLEX", None));
-        ___qtablewidgetitem23 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"SPEED", None));
-        ___qtablewidgetitem24 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"MTU", None));
+        ___qtablewidgetitem22 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"ISUP", None));
+        ___qtablewidgetitem23 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"DUPLEX", None));
+        ___qtablewidgetitem24 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"SPEED", None));
+        ___qtablewidgetitem25 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"MTU", None));
         self.label_55.setText(QCoreApplication.translate("MainWindow", u"Network IO Counter", None))
-        ___qtablewidgetitem25 = self.network_io_counter_table_widget.horizontalHeaderItem(0)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"IO", None));
-        ___qtablewidgetitem26 = self.network_io_counter_table_widget.horizontalHeaderItem(1)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"BYTES SENT", None));
-        ___qtablewidgetitem27 = self.network_io_counter_table_widget.horizontalHeaderItem(2)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"BYTES RECEIVED", None));
-        ___qtablewidgetitem28 = self.network_io_counter_table_widget.horizontalHeaderItem(3)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"PACKET SENT", None));
-        ___qtablewidgetitem29 = self.network_io_counter_table_widget.horizontalHeaderItem(4)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"PACKET RECEIVED", None));
-        ___qtablewidgetitem30 = self.network_io_counter_table_widget.horizontalHeaderItem(5)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"ERR IN", None));
-        ___qtablewidgetitem31 = self.network_io_counter_table_widget.horizontalHeaderItem(6)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"ERR OUT", None));
-        ___qtablewidgetitem32 = self.network_io_counter_table_widget.horizontalHeaderItem(7)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"DROP IN", None));
-        ___qtablewidgetitem33 = self.network_io_counter_table_widget.horizontalHeaderItem(8)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"DROP OUT", None));
+        ___qtablewidgetitem26 = self.network_io_counter_table_widget.horizontalHeaderItem(0)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"IO", None));
+        ___qtablewidgetitem27 = self.network_io_counter_table_widget.horizontalHeaderItem(1)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"BYTES SENT", None));
+        ___qtablewidgetitem28 = self.network_io_counter_table_widget.horizontalHeaderItem(2)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"BYTES RECEIVED", None));
+        ___qtablewidgetitem29 = self.network_io_counter_table_widget.horizontalHeaderItem(3)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"PACKET SENT", None));
+        ___qtablewidgetitem30 = self.network_io_counter_table_widget.horizontalHeaderItem(4)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"PACKET RECEIVED", None));
+        ___qtablewidgetitem31 = self.network_io_counter_table_widget.horizontalHeaderItem(5)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"ERR IN", None));
+        ___qtablewidgetitem32 = self.network_io_counter_table_widget.horizontalHeaderItem(6)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"ERR OUT", None));
+        ___qtablewidgetitem33 = self.network_io_counter_table_widget.horizontalHeaderItem(7)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"DROP IN", None));
+        ___qtablewidgetitem34 = self.network_io_counter_table_widget.horizontalHeaderItem(8)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"DROP OUT", None));
         self.label_56.setText(QCoreApplication.translate("MainWindow", u"Network Addresses", None))
-        ___qtablewidgetitem34 = self.network_addresses_tablewidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"FAMILY", None));
-        ___qtablewidgetitem35 = self.network_addresses_tablewidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"ADDRESSES", None));
-        ___qtablewidgetitem36 = self.network_addresses_tablewidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"NETMASK", None));
-        ___qtablewidgetitem37 = self.network_addresses_tablewidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"ROADCAST", None));
-        ___qtablewidgetitem38 = self.network_addresses_tablewidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"PID", None));
+        ___qtablewidgetitem35 = self.network_addresses_tablewidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"FAMILY", None));
+        ___qtablewidgetitem36 = self.network_addresses_tablewidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"ADDRESSES", None));
+        ___qtablewidgetitem37 = self.network_addresses_tablewidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"NETMASK", None));
+        ___qtablewidgetitem38 = self.network_addresses_tablewidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"ROADCAST", None));
+        ___qtablewidgetitem39 = self.network_addresses_tablewidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"PID", None));
         self.label_57.setText(QCoreApplication.translate("MainWindow", u"Network Connection", None))
-        ___qtablewidgetitem39 = self.network_connection_frame_tablewidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem40 = self.network_connection_frame_tablewidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"FAMILY", None));
-        ___qtablewidgetitem41 = self.network_connection_frame_tablewidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem40 = self.network_connection_frame_tablewidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem41 = self.network_connection_frame_tablewidget.horizontalHeaderItem(1)
         ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"FAMILY", None));
-        ___qtablewidgetitem42 = self.network_connection_frame_tablewidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"RADDR", None));
-        ___qtablewidgetitem43 = self.network_connection_frame_tablewidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"STATUS", None));
-        ___qtablewidgetitem44 = self.network_connection_frame_tablewidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"PID", None));
+        ___qtablewidgetitem42 = self.network_connection_frame_tablewidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"FAMILY", None));
+        ___qtablewidgetitem43 = self.network_connection_frame_tablewidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"RADDR", None));
+        ___qtablewidgetitem44 = self.network_connection_frame_tablewidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"STATUS", None));
+        ___qtablewidgetitem45 = self.network_connection_frame_tablewidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"PID", None));
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Version 1.0 | Copyright System Co", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"?", None))
     # retranslateUi

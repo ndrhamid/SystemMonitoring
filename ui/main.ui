@@ -575,7 +575,7 @@ border:none;
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>3</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="cpu_and_memory">
              <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1359,6 +1359,16 @@ border:none;
                      <string>FREE STORAGE</string>
                     </property>
                    </column>
+                   <column>
+                    <property name="text">
+                     <string>USED STORAGE</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </column>
                   </widget>
                  </item>
                 </layout>
@@ -1440,8 +1450,8 @@ border:none;
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>205</width>
-                   <height>474</height>
+                   <width>831</width>
+                   <height>482</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_10">
