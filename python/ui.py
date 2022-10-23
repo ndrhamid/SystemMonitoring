@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainTHNAjF.ui'
+## Form generated from reading UI file 'mainZLgVmp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -780,8 +780,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.label_53, 0, Qt.AlignLeft|Qt.AlignTop)
 
         self.sensor_table_Widget = QTableWidget(self.sensors_frame)
-        if (self.sensor_table_Widget.columnCount() < 5):
-            self.sensor_table_Widget.setColumnCount(5)
+        if (self.sensor_table_Widget.columnCount() < 6):
+            self.sensor_table_Widget.setColumnCount(6)
         __qtablewidgetitem17 = QTableWidgetItem()
         self.sensor_table_Widget.setHorizontalHeaderItem(0, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
@@ -792,6 +792,8 @@ class Ui_MainWindow(object):
         self.sensor_table_Widget.setHorizontalHeaderItem(3, __qtablewidgetitem20)
         __qtablewidgetitem21 = QTableWidgetItem()
         self.sensor_table_Widget.setHorizontalHeaderItem(4, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.sensor_table_Widget.setHorizontalHeaderItem(5, __qtablewidgetitem22)
         self.sensor_table_Widget.setObjectName(u"sensor_table_Widget")
 
         self.verticalLayout_9.addWidget(self.sensor_table_Widget)
@@ -829,16 +831,16 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.stats_frame)
         if (self.tableWidget.columnCount() < 5):
             self.tableWidget.setColumnCount(5)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem22)
         __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem23)
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem24)
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem25)
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem25)
         __qtablewidgetitem26 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem26)
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem27)
         self.tableWidget.setObjectName(u"tableWidget")
 
         self.verticalLayout_12.addWidget(self.tableWidget)
@@ -861,24 +863,24 @@ class Ui_MainWindow(object):
         self.network_io_counter_table_widget = QTableWidget(self.network_io_counter_frame)
         if (self.network_io_counter_table_widget.columnCount() < 9):
             self.network_io_counter_table_widget.setColumnCount(9)
-        __qtablewidgetitem27 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem27)
         __qtablewidgetitem28 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(1, __qtablewidgetitem28)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(0, __qtablewidgetitem28)
         __qtablewidgetitem29 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(2, __qtablewidgetitem29)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(1, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(3, __qtablewidgetitem30)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(2, __qtablewidgetitem30)
         __qtablewidgetitem31 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(4, __qtablewidgetitem31)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(3, __qtablewidgetitem31)
         __qtablewidgetitem32 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(5, __qtablewidgetitem32)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(4, __qtablewidgetitem32)
         __qtablewidgetitem33 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem33)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(5, __qtablewidgetitem33)
         __qtablewidgetitem34 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem34)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(6, __qtablewidgetitem34)
         __qtablewidgetitem35 = QTableWidgetItem()
-        self.network_io_counter_table_widget.setHorizontalHeaderItem(8, __qtablewidgetitem35)
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(7, __qtablewidgetitem35)
+        __qtablewidgetitem36 = QTableWidgetItem()
+        self.network_io_counter_table_widget.setHorizontalHeaderItem(8, __qtablewidgetitem36)
         self.network_io_counter_table_widget.setObjectName(u"network_io_counter_table_widget")
         self.network_io_counter_table_widget.setStyleSheet(u"")
 
@@ -902,18 +904,18 @@ class Ui_MainWindow(object):
         self.network_addresses_tablewidget = QTableWidget(self.network_addresses_frame)
         if (self.network_addresses_tablewidget.columnCount() < 6):
             self.network_addresses_tablewidget.setColumnCount(6)
-        __qtablewidgetitem36 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem36)
         __qtablewidgetitem37 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem37)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem37)
         __qtablewidgetitem38 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem38)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem38)
         __qtablewidgetitem39 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem39)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem39)
         __qtablewidgetitem40 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem40)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem40)
         __qtablewidgetitem41 = QTableWidgetItem()
-        self.network_addresses_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem41)
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem41)
+        __qtablewidgetitem42 = QTableWidgetItem()
+        self.network_addresses_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem42)
         self.network_addresses_tablewidget.setObjectName(u"network_addresses_tablewidget")
 
         self.verticalLayout_14.addWidget(self.network_addresses_tablewidget)
@@ -936,18 +938,18 @@ class Ui_MainWindow(object):
         self.network_connection_frame_tablewidget = QTableWidget(self.network_connection_frame)
         if (self.network_connection_frame_tablewidget.columnCount() < 6):
             self.network_connection_frame_tablewidget.setColumnCount(6)
-        __qtablewidgetitem42 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem43)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(0, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem44)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(1, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem45)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(2, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem46)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(3, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem47)
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(4, __qtablewidgetitem47)
+        __qtablewidgetitem48 = QTableWidgetItem()
+        self.network_connection_frame_tablewidget.setHorizontalHeaderItem(5, __qtablewidgetitem48)
         self.network_connection_frame_tablewidget.setObjectName(u"network_connection_frame_tablewidget")
 
         self.verticalLayout_15.addWidget(self.network_connection_frame_tablewidget)
@@ -1029,7 +1031,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -8,12 +8,12 @@ import shutil
 import PySide2extn
 from PySide2 import QtCore, QtWidgets
 from PySide2.QtCore import QPropertyAnimation
-from PySide2.QtWidgets import QMainWindow, QSizeGrip, QGraphicsDropShadowEffect, QPushButton, QTableWidgetItem, QProgressBar
+from PySide2.QtWidgets import QMainWindow, QSizeGrip, QGraphicsDropShadowEffect, QPushButton, QTableWidgetItem, \
+    QProgressBar
 from qt_material import *
 from multiprocessing import cpu_count
 # IMPORT GUI FILE
 from ui import Ui_MainWindow
-
 
 # Global
 platforms = {
@@ -23,6 +23,8 @@ platforms = {
     'darwin': 'OS X',
     'win32': 'Windows'
 }
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -39,7 +41,9 @@ class MainWindow(QMainWindow):
         self.storage()
         # self.battery_information()
         self.set_style()
+        self.sensors()
         self.show()
+
     def set_style(self):
         apply_stylesheet(app, theme="dark_cyan.xml")
         self.shadow = QGraphicsDropShadowEffect(self)
@@ -56,13 +60,15 @@ class MainWindow(QMainWindow):
 
         self.ui.cpu_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.cpu_and_memory))
         self.ui.battery_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.battery))
-        self.ui.system_info_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.system_information))
+        self.ui.system_info_page_btn.clicked.connect(
+            lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.system_information))
         self.ui.activity_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.activities))
         self.ui.storage_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.storage))
         self.ui.sensor_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.sensors))
         self.ui.network_page_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.network))
 
         self.ui.menu_btn.clicked.connect(lambda: self.ui.left_menu_count_frame)
+
     def restore_or_maximize_window(self):
         if self.isMaximized():
             self.showNormal()
@@ -83,6 +89,7 @@ class MainWindow(QMainWindow):
         self.animation.setEndValue(newWidth)
         self.animation.setEasingCurve(QtCore.QEasingCurve.InQutQuart)
         self.animation.start()
+
     def menu_button_style(self):
         for button in self.ui.menu_frame.findChildren(QPushButton):
             button.clicked.connect(self.apply_button_style)
@@ -106,11 +113,10 @@ class MainWindow(QMainWindow):
         self.ui.system_system.setText(platform.system())
         self.ui.system_processor.setText(platform.processor())
 
-
     def secs2hours(self, secs):
         mm, ss = divmod(secs, 60)
         hh, mm = divmod(mm, 60)
-        return "%d:%02d:%02d (H:M:S)" %(hh, mm, ss)
+        return "%d:%02d:%02d (H:M:S)" % (hh, mm, ss)
 
     def battery_information(self):
         batt = psutil.sensors_battery()
@@ -120,7 +126,7 @@ class MainWindow(QMainWindow):
         if batt is None:
             self.ui.battery_status.setText("No battery installed")
         if batt.power_plugged:
-            self.ui.battery_charge.setText(str(round(batt.percent, 2))+"%")
+            self.ui.battery_charge.setText(str(round(batt.percent, 2)) + "%")
             self.ui.battery_time_left.setText("N/A")
             if batt.percent < 100:
                 self.ui.battery_status.setText("Charging")
@@ -128,7 +134,7 @@ class MainWindow(QMainWindow):
                 self.ui.battery_status.setText("Fully Charged")
             self.ui.battery_plugged.setText("Yes")
         else:
-            self.ui.battery_charge.setText(str(round(batt.percent, 2))+"%")
+            self.ui.battery_charge.setText(str(round(batt.percent, 2)) + "%")
             self.ui.battery_time_left.setText(self.secs2hours(batt.secsleft))
 
             if batt.percent < 100:
@@ -211,6 +217,7 @@ class MainWindow(QMainWindow):
         qtablewidgetitem = getattr(self.ui, tableName).item(rowPosition, columnPosition)
 
         qtablewidgetitem.setText(text)
+
     def processes(self):
         for x in psutil.pids():
             rowPosition = self.ui.activities_table_widget.rowCount()
@@ -222,7 +229,9 @@ class MainWindow(QMainWindow):
                 self.create_table_widget(rowPosition, 0, str(process.pid), "activities_table_widget")
                 self.create_table_widget(rowPosition, 1, process.name(), "activities_table_widget")
                 self.create_table_widget(rowPosition, 2, process.status(), "activities_table_widget")
-                self.create_table_widget(rowPosition, 3, str(datetime.datetime.utcfromtimestamp(process.create_time()).strftime("%Y-%m-%d %H:%M:%S")), "activities_table_widget")
+                self.create_table_widget(rowPosition, 3,
+                                         str(datetime.datetime.utcfromtimestamp(process.create_time()).strftime(
+                                             "%Y-%m-%d %H:%M:%S")), "activities_table_widget")
 
                 suspend_btn = QPushButton(self.ui.activities_table_widget)
                 suspend_btn.setText("Suspend")
@@ -275,14 +284,22 @@ class MainWindow(QMainWindow):
                 self.create_table_widget(rowPosition, 4, str(x.maxfile), "storage_table_widget")
                 self.create_table_widget(rowPosition, 5, str(x.maxpath), "storage_table_widget")
             else:
-                self.create_table_widget(rowPosition, 4, "Function not available on" + platforms[sys.platform], "storage_table_widget")
-                self.create_table_widget(rowPosition, 5, "Function not available on" + platforms[sys.platform], "storage_table_widget")
+                self.create_table_widget(rowPosition, 4, "Function not available on" + platforms[sys.platform],
+                                         "storage_table_widget")
+                self.create_table_widget(rowPosition, 5, "Function not available on" + platforms[sys.platform],
+                                         "storage_table_widget")
 
             try:
                 disk_usage = shutil.disk_usage(x.mountpoint)
-                self.create_table_widget(rowPosition, 6, str((disk_usage.total / (1024 * 1024 * 1024)).__round__()) + " GB", "storage_table_widget")
-                self.create_table_widget(rowPosition, 7, str((disk_usage.free / (1024 * 1024 * 1024)).__round__()) + " GB", "storage_table_widget")
-                self.create_table_widget(rowPosition, 8, str((disk_usage.used / (1024 * 1024 * 1024)).__round__()) + " GB", "storage_table_widget")
+                self.create_table_widget(rowPosition, 6,
+                                         str((disk_usage.total / (1024 * 1024 * 1024)).__round__()) + " GB",
+                                         "storage_table_widget")
+                self.create_table_widget(rowPosition, 7,
+                                         str((disk_usage.free / (1024 * 1024 * 1024)).__round__()) + " GB",
+                                         "storage_table_widget")
+                self.create_table_widget(rowPosition, 8,
+                                         str((disk_usage.used / (1024 * 1024 * 1024)).__round__()) + " GB",
+                                         "storage_table_widget")
 
                 # full_disk = (disk_usage.used / disk_usage.total) * 100
                 # progressBar = QProgressBar(self.ui.storage_table_widget)
@@ -292,8 +309,39 @@ class MainWindow(QMainWindow):
             except Exception as e:
                 print(e)
 
+    def sensors(self):
+        if sys.platform == "linux" or sys.platform == "linux1" or sys.platform == 'linux2':
+            for x in psutil.sensors_temperatures():
+                for y in psutil.sensors_temperatures()[x]:
+                    rowPosition = self.ui.sensor_table_Widget.rowCount()
+                    self.ui.sensor_table_Widget.insertRow(rowPosition)
 
-                
+                    self.create_table_widget(rowPosition, 0, x, "sensor_table_Widget")
+                    self.create_table_widget(rowPosition, 1, y.label, "sensor_table_Widget")
+                    self.create_table_widget(rowPosition, 2, str(y.current), "sensor_table_Widget")
+                    self.create_table_widget(rowPosition, 3, str(y.high), "sensor_table_Widget")
+                    self.create_table_widget(rowPosition, 4, str(y.critical), "sensor_table_Widget")
+
+                    temp_per = (y.current / y.high) * 100
+
+                    progressBar = QProgressBar(self.ui.sensor_table_Widget)
+                    progressBar.setObjectName(u"progressBar")
+                    progressBar.setValue(temp_per)
+                    self.ui.sensor_table_Widget.setCellWidget(rowPosition, 5, progressBar)
+        else:
+            global platforms
+            rowPosition = self.ui.sensor_table_Widget.rowCount()
+            self.ui.sensor_table_Widget.insertRow(rowPosition)
+
+            self.create_table_widget(rowPosition, 0, "Function not supported on " + platforms[sys.platform],
+                                     "sensor_table_Widget")
+            self.create_table_widget(rowPosition, 1, "N/A", "sensor_table_Widget")
+            self.create_table_widget(rowPosition, 2, "N/A", "sensor_table_Widget")
+            self.create_table_widget(rowPosition, 3, "N/A", "sensor_table_Widget")
+            self.create_table_widget(rowPosition, 4, "N/A", "sensor_table_Widget")
+            self.create_table_widget(rowPosition, 5, "N/A", "sensor_table_Widget")
+
+
 
 
 if __name__ == "__main__":
